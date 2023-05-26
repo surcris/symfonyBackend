@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin-left: 1vw;
+}
+li{
+    list-style: none;
+    margin-left: 1vw;
+}

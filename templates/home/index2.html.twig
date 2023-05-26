@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('asset/style/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/style/main.css') }}">
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+{% if nbr2 == 0 or nbr1 == 0 %}
+    <p>afficher nbr1 ou nbr2 est égal à zéro</p>
+{% elseif  nbr1 > nbr2 %}
+    <p>nbr1  est le nombre le plus grand</p>
+{% elseif  nbr2 > nbr1 %}
+    <p>nbr2  est le nombre le plus grand</p>
+{% endif %} 
+{% endblock %}

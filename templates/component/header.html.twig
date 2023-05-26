@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('app_home') }}">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          {# Test si l'utilisateur est connecté #}
+          {% if app.user.userIdentifier is defined %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_article_all') }}">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_article_add') }}">Ajouter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_categorie_all') }}">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+            </li>
+          {# Test si l'utilisateur n'est pas connecté #}
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_article_all') }}">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_categorie_all') }}">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_Add_contact') }}">Add Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+            </li>
+          {% endif %}
+      </div>
+    </div>
+</nav>
