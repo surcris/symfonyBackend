@@ -14,15 +14,19 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use App\Repository\UserRepository;
 
 class AuthAuthenticator extends AbstractLoginFormAuthenticator
 {
+
     use TargetPathTrait;
 
+    private $repo;
     public const LOGIN_ROUTE = 'app_login';
 
-    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    public function __construct(private UrlGeneratorInterface $urlGenerator,UserRepository $userRepo)
     {
+        $this->repo = $userRepo;
     }
 
     public function authenticate(Request $request): Passport
