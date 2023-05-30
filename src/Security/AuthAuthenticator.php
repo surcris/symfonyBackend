@@ -50,6 +50,11 @@ class AuthAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
+        $email = $request->request->get('email', '');
+        $recup = $this->repo->findOneBy(['email'=>$email]);
+        if ($recup[0]->isActivate()) {
+            # code...
+        }
         // For example:
         return new RedirectResponse($this->urlGenerator->generate('app_home'));
         // return new RedirectResponse($this->urlGenerator->generate('some_route'));

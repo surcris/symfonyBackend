@@ -1,6 +1,11 @@
 # symfony_cda
+# installer les composents du projet
+composer install
 
-# installer des composent sumfony
+# lancer le serveur
+symfony server:start
+
+# installer des composents sumfony
 composer require
 
 # commande de creation de base de donnée avec les controller du projet
